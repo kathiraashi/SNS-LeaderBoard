@@ -1,0 +1,205 @@
+/* top navigation bar style */
+.navbar {
+    background-color: #2775be;
+    color: #ffffff;
+    height: auto;
+}
+.navbar-brand {
+    padding-top: 10px;
+}
+.Initial {
+    height: 40px;
+}
+.Transform {
+    height: 40px;;
+}
+.imgInitial {
+    height: 40px;
+    width: 66px;
+    transition: width 0.5s, height 0.5s;
+}
+.imgTransform {
+    height: 45px;
+    width: 76px;
+    transition: width 0.5s, height 0.5s;
+
+}
+.navbar form {
+    display: flex;
+}
+.navbar form .input-group {
+    padding-top: 4px;
+}
+.navbar button {
+    font-size: 18px;
+}
+.navbar .navbar-header button {
+    margin-top: 10px;
+}
+.navbar .iconbuttons {
+    float: right;
+    display: flex;
+    
+}
+.navbar .iconbuttons .mat-icon-button {
+    margin-top: 3%;
+}
+#menuButton {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.menuButtonInitial {
+    margin-left: initial;
+    transform: rotate(initial);
+    transition: margin-left 0.5s, transform 1s;
+}
+.menuButtonTransform {
+    margin-left: 55px;
+    transform: rotate(360deg);
+    transition: margin-left 0.5s, transform 1s;
+
+}
+/* top navigation bar style ends */
+
+/* side navigation bar style */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 58px;
+    left: 0;
+    background-color: #ececec;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: 0.5s;
+    /* padding-top: 60px; */
+}
+.sideNavContent {
+    height: 100%;
+}
+
+#content {
+    transition: margin-left 0.5s;
+    /* padding: 6px; */
+}
+
+#sideNav.showSideNav {
+    width: 200px;
+    transition: 0.5s;
+
+}
+
+#sideNav.hideSideNav {
+    width: 80px;
+    transition: 0.5s;
+
+}
+
+#content.showSideNav {
+    margin-left: 200px;
+    transition: 0.5s;
+
+}
+#content.hideSideNav {
+    margin-left: 80px;
+    transition: 0.5s;
+
+}
+
+#sideNav.hideSideNav > .sideNavContent mat-card-header span, #sideNav.hideSideNav > .sideNavContent button span{
+    display: none;
+    transition: 0.5s;
+
+}
+
+#sideNav.hideSideNav > .sideNavContent mat-card-header img {
+    width: 50px;
+    margin-left: -20px;
+    transition: 0.5s;
+}
+#sideNav.showSideNav > .sideNavContent mat-card-header img {
+    margin-left: 0px;
+    transition: 0.5s;
+}
+#sideNav.hideSideNav > .sideNavContent button {
+    width: 50px;
+    transition: 0.5s;
+}
+#sideNav.showSideNav > .sideNavContent button {
+    transition: 0.5s;
+}
+/* sideve navigation styel ends */
+
+/* matcard style */
+mat-card {
+    text-align: center;
+}
+mat-card-header {
+    text-align: center;
+}
+mat-card-title > .avatar{
+    width: 50%;
+    height: 50%;
+    margin-bottom: 2%;
+}
+mat-card-actions > a {
+    text-decoration: none;
+     
+}
+mat-card-actions > a > button{
+    width: 100%;
+    height: 10%;
+    text-align: left;
+    margin-left: 0;
+    margin-top: 5%;
+}
+mat-card-actions > a > button:hover {
+    width: 100%;
+}
+mat-card-actions > a.active > button {
+    background-color: #2775be;
+    color: #ffffff;
+}
+/* mat-card style ends */
+
+@media screen and (max-width: 750px) {
+    .sidenav {
+        top: 130px;
+    }
+    /* #menuButton {
+        display: none;
+    } */
+    #sideNav.hideSideNav > .sideNavContent mat-card-header img {
+        margin-left: -10px;
+    }
+    .navbar .iconbuttons .mat-icon-button {
+        margin-top: 5%;
+    
+    }
+    #sideNav.hideSideNav {
+        width: 80px;
+        transition: 0.5s;
+    
+    }
+    #content.hideSideNav {
+        margin-left: 80px;
+        transition: 0.5s;
+    
+    }
+    #sideNav.hideSideNav > .sideNavContent mat-card-header span, #sideNav.hideSideNav > .sideNavContent button span{
+        display: none;
+        transition: 0.5s;
+    
+    }
+    /* #sideNav.hideSideNav > .sideNavContent button:hover + span {
+        display: block;
+
+    } */
+    #sideNav.hideSideNav > .sideNavContent mat-card-header img {
+        width: 50px;
+        margin-left: -17px;
+        transition: 0.5s;
+    }
+}
+

@@ -1,0 +1,124 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<!-- top fixed navigation bar -->
+<nav class="navbar navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="" class="navbar-brand">
+        <img src="../assets/sns_institute_logo.png" alt="logo" [ngClass]="{'imgInitial' : !status, 'imgTransform' : status}">
+      </a>
+      <button id="menuButton" mat-button (click)="clickEvent()" [ngClass]="{'menuButtonInitial' : !status, 'menuButtonTransform' : status}">
+        <span *ngIf=status then style="display: block;"><i class="fas fa-arrow-left"></i></span>
+        <span *ngIf=!status then style="display: block;"><i class="fas fa-bars"></i></span>
+        <!-- <span *ngIf="status" ><i class="fas fa-times"></i></span> -->
+      </button>
+    </div>
+    <div class="iconbuttons">
+
+      <form class="navbar-form" action="">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="search..." name="search">
+          <div class="input-group-btn">
+            <button mat-button type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+
+      </form>
+      <!-- bell notification -->
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <i class="far fa-bell"></i>
+      </button>
+      <!-- dropdown menu -->
+      <mat-menu #menu="matMenu" [overlapTrigger]="false" xPosition="before" yPosition="below">
+        <button mat-menu-item>
+          <span>notification 1</span>
+        </button>
+        <button mat-menu-item>
+          <span>notification 2</span>
+        </button>
+        <button mat-menu-item>
+          <span>notification 3</span>
+        </button>
+      </mat-menu>
+
+      <!-- logout button -->
+      <button mat-icon-button matTooltip="Logout">
+        <i class="fas fa-sign-out-alt"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+<!-- side navigation bar -->
+<div id="sideNav" class="sidenav" [ngClass]="status ? 'showSideNav' : 'hideSideNav'">
+  <div class="sideNavContent" style="background-color: #ffffff;">
+    <!-- <button id="menuButton" mat-icon-button (click)="clickEvent()" *ngIf="status" then style="display: block; margin-left: 85%;">
+          <i class="fas fa-times"></i>
+        </button> -->
+    <mat-card>
+
+      <mat-card-header>
+        <!-- <button id="menuButton" mat-icon-button (click)="clickEvent()" *ngIf="status" then style="display: block">
+          <i class="fas fa-times"></i>
+        </button> -->
+        <mat-card-title>
+          <img class="avatar" src="../../assets/avatar.png" alt="avatar">
+          <br/>
+          <span>Student Name</span>
+        </mat-card-title>
+        <mat-card-subtitle>
+          <span>Degree</span>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-divider></mat-divider>
+      <mat-card-actions>
+        <a routerLink="/dashboard" routerLinkActive="active">
+          <button mat-button>
+            <i class="fas fa-home"></i> &nbsp;&nbsp;
+            <span>My Dashboard</span>
+          </button>
+        </a>
+        <a routerLink="/levels" routerLinkActive="active">
+          <button mat-button>
+            <i class="fas fa-th-list"></i> &nbsp;&nbsp;
+            <span>My Levels</span>
+          </button>
+        </a>
+        <a routerLink="/achievements" routerLinkActive="active">
+          <button mat-button>
+            <i class="fas fa-trophy"></i> &nbsp;&nbsp;
+            <span>My Achievements</span>
+          </button>
+        </a>
+        <a routerLink="/badges" routerLinkActive="active">
+          <button mat-button>
+            <i class="fas fa-award"></i> &nbsp;&nbsp;
+            <span>My Badges</span>
+          </button>
+        </a>
+        <a routerLink="/activities" routerLinkActive="active">
+          <button mat-button>
+            <i class="fas fa-chart-line"></i> &nbsp;&nbsp;
+            <span>My Activities</span>
+          </button>
+        </a>
+        <a routerLink="/profile" routerLinkActive="active">
+          <button mat-button>
+            <i class="far fa-user"></i> &nbsp;&nbsp;
+            <span>My Profile</span>
+          </button>
+        </a>
+        <a routerLink="/contactAdmin" routerLinkActive="active">
+          <button mat-button>
+            <i class="fas fa-headset"></i> &nbsp;&nbsp;
+            <span>Contact Admin</span>
+          </button>
+        </a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+<div id="content" [ngClass]="status ? 'showSideNav' : 'hideSideNav'">
+  <router-outlet></router-outlet>
+</div>

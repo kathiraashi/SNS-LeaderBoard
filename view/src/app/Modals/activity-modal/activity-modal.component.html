@@ -1,0 +1,57 @@
+<div class="Modal_Content" *ngIf="Type && Type === 'Create'">
+   <div class="Modal_Header">
+      <p> Activity</p>
+      <span data-dismiss="modal" (click)="bsModalRef.hide()">&times;</span>
+   </div>
+   <div class="Model_Body">
+      <div class="row">
+         <div class="col-sm-6 Form_Input">
+            <label> Date:</label>
+            <input type="text">
+         </div>
+         <div class="col-sm-6 Form_Input">
+            <label> Activity:</label>
+            <input type="text">
+         </div>
+         <div class="col-sm-6 Form_Select">
+            <label> Status:</label>
+            <select>
+               <option disabled> Status</option>
+               <option> In Progress</option>
+               <option>Completed</option>
+            </select>
+         </div>
+      </div>
+   </div>
+   <div class="Model_Footer">
+      <button mat-raised-button color="primary"> Submit </button>
+   </div>
+</div>
+<div class="Modal_Content" *ngIf=" Type && Type === 'View'">
+   <div class="Modal_Header">
+      <p>Activity</p>
+      <span data-dismiss="modal" (click)="bsModalRef.hide()">&times;</span>
+   </div>
+   <div class="Model_Body">
+      <div class="view_item">
+         <div class=" Static">Date </div>
+         <div class="dots"> : </div>
+         <div class=" Data">27/08/18</div>
+      </div>
+      <div class="view_item">
+         <div class=" Static">Activity </div>
+         <div class="dots"> : </div>
+         <div class=" Data"> Activity</div>
+      </div>
+      <div class="view_item">
+         <div class=" Static">Description </div>
+         <div class="dots"> : </div>
+         <div class=" Data">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+      </div>
+   </div>
+</div>
+         
+            
+         
+      
+   

@@ -1,0 +1,50 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Academic Info Update</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="academicForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput type="text" formControlName="graduate" placeholder="Graduate">
+      <mat-error *ngIf="academicForm.controls['graduate'].errors && !academicForm.controls['graduate'].errors.pristine">
+        <span *ngIf="academicForm.controls['graduate'].errors.required">this field is
+          <strong>required</strong>
+        </span>
+      </mat-error>
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field>
+      <input matInput type="text" formControlName="percentage" placeholder="Percentage">
+      <mat-error *ngIf="academicForm.controls['percentage'].errors && !academicForm.controls['percentage'].errors.pristine">
+        <span *ngIf="academicForm.controls['percentage'].errors.required">this field is
+          <strong>required</strong>
+        </span>
+        <span *ngIf="academicForm.controls['percentage'].errors.max || academicForm.controls['percentage'].errors.min">
+          enter the percentage range between 0 - 100
+        </span>
+        <span *ngIf="academicForm.controls['percentage'].errors.pattern">percentage should be in <strong>numbers</strong></span>
+      </mat-error>
+    </mat-form-field>
+    &nbsp;
+    <mat-form-field>
+      <input matInput type="text" formControlName="y_passing" placeholder="Year of passing">
+      <mat-error *ngIf="academicForm.controls['y_passing'].errors && !academicForm.controls['y_passing'].errors.pristine">
+        <span *ngIf="academicForm.controls['y_passing'].errors.required">this field is <strong>required</strong>
+        </span>
+        <span *ngIf="academicForm.controls['y_passing'].errors.max || academicForm.controls['y_passing'].errors.min">
+         <strong>invalid</strong> year of passing
+        </span>
+        <span *ngIf="academicForm.controls['y_passing'].errors.pattern">year of passing should be in <strong>numbers</strong></span>
+      </mat-error>
+    </mat-form-field>
+    <br/>
+    <br/>
+    <div class="modal-footer">
+      <button mat-raised-button type="submit" [disabled]="!academicForm.valid" style="background-color: #4680ff; color: #ffffff">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

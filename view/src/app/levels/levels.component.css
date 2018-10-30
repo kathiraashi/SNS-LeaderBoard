@@ -1,0 +1,44 @@
+
+.col-md-4 {
+    margin: -1% 2% 5% 5%;
+    width: 250px;
+    height: auto;
+}
+
+mat-card-footer {
+    padding: 1% 0% 1% 5%;
+    color: #ffffff;
+}
+
+mat-card-footer > h5 {
+    font-weight: bold;
+}
+
+#level_1_points mat-card-footer {
+    background-color: #9ccc65;
+}
+#level_1_points mat-card-title, #level_1_points i {
+    color: #9ccc65;
+}
+
+#level_2_points mat-card-footer {
+    background-color: #ffba57;
+}
+#level_2_points mat-card-title, #level_2_points i{
+    color: #ffba57;
+}
+
+
+#level_3_points mat-card-footer {
+    background-color: #ff5252;
+}
+#level_3_points mat-card-title, #level_3_points i {
+    color: #ff5252;
+}
+i {
+    padding-left: 40%; 
+}
+.View_Link{
+   margin-left:50%;
+   cursor:pointer;
+}

@@ -1,0 +1,32 @@
+<div class="modal-header">
+  <h4 class="modal-title pull-left">Extra Curricular Activities Update</h4>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="extraCAForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput type="text" formControlName="sports_name" placeholder="Sport Name">
+      <mat-error *ngIf="extraCAForm.controls['sports_name'].errors && !extraCAForm.controls['sports_name'].errors.pristine">
+        <span *ngIf="extraCAForm.controls['sports_name'].errors.required">this field is
+          <strong>required</strong>
+        </span>
+      </mat-error>
+    </mat-form-field>
+    &nbsp; 
+    <mat-form-field>
+      <input matInput type="text" formControlName="honors" placeholder="Honors">
+      <mat-error *ngIf="extraCAForm.controls['honors'].errors && !extraCAForm.controls['honors'].errors.pristine">
+        <span *ngIf="extraCAForm.controls['honors'].errors.required">this field is
+          <strong>required</strong>
+        </span>
+      </mat-error>
+    </mat-form-field>
+    <div class="modal-footer">
+      <button mat-raised-button type="submit" [disabled]="!extraCAForm.valid" style="background-color: #4680ff; color: #ffffff">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
